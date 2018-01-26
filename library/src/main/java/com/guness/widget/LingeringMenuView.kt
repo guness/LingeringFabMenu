@@ -1,12 +1,13 @@
-package com.yetenekbu.android.utils
+package com.guness.widget
 
+import android.annotation.TargetApi
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.util.AttributeSet
 import android.view.*
 import android.widget.LinearLayout
-import com.guness.widget.LingeringMenuItem
 import java.util.*
 
 /**
@@ -17,12 +18,11 @@ class LingeringMenuView : LinearLayout, Menu {
     private val mItems = LinkedList<LingeringMenuItem>()
     private var mListener: MenuItem.OnMenuItemClickListener? = null
 
-    constructor(context: Context) : this(context, null)
-    constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : this(context, attrs, defStyleAttr, 0)
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) : super(context, attrs, defStyleAttr, defStyleRes) {
-
-    }
+    constructor(context: Context) : super(context)
+    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) : super(context, attrs, defStyleAttr, defStyleRes)
 
     override fun clear() {
         mItems.clear()

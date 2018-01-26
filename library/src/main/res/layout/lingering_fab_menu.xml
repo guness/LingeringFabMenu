@@ -7,7 +7,7 @@
     android:layout_gravity="bottom"
     tools:parentTag="android.support.constraint.ConstraintLayout">
 
-    <com.yetenekbu.android.utils.LingeringMenuView
+    <com.guness.widget.LingeringMenuView
         android:id="@+id/menuView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
