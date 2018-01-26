@@ -103,6 +103,6 @@ class LingeringFabMenu : ConstraintLayout {
 
     companion object {
         private const val ANIM_DURATION = 350L
-        val TAG = LingeringFabMenu::class.simpleName
+        const val TAG = "LingeringFabMenu"
     }
 }
