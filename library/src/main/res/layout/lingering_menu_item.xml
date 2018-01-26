@@ -9,5 +9,5 @@
         android:layout_height="match_parent"
         android:padding="12dp"
         android:scaleType="fitCenter"
-        android:tint="@color/white" />
+        android:tint="@color/lingering_menu_item_tint" />
 </FrameLayout>
