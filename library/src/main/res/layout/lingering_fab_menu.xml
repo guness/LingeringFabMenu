@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="72dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    tools:parentTag="android.support.constraint.ConstraintLayout">
+
+    <com.yetenekbu.android.utils.LingeringMenuView
+        android:id="@+id/menuView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/lingering_menu_half"
+        android:background="@drawable/lingering_menu_background"
+        android:minHeight="@dimen/lingering_menu_size"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/lingering_menu_half"
+        android:paddingTop="4dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/fabView"
+        app:layout_constraintEnd_toEndOf="@+id/fabView"
+        app:layout_constraintStart_toStartOf="@+id/fabView"
+        tools:minHeight="156dp"
+        tools:visibility="visible" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabView"
+        android:layout_width="@dimen/lingering_menu_size"
+        android:layout_height="@dimen/lingering_menu_size"
+        android:layout_margin="8dp"
+        android:src="@drawable/ic_rotating_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</merge>
