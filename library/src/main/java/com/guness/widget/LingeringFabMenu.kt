@@ -48,6 +48,10 @@ class LingeringFabMenu : ConstraintLayout {
         MenuInflater(context).inflate(resourceId, menuView)
     }
 
+    fun findItem(id: Int): MenuItem? {
+        return menuView.findItem(id)
+    }
+
     // https://stackoverflow.com/a/47594719
     private fun toggle() {
         var temp: Boolean
