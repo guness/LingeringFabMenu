@@ -18,6 +18,7 @@ class LingeringMenuItem(parent: ViewGroup) : MenuItem {
     private val mItem: View
     private val mIcon: ImageView
 
+    private var mIsCheckable = true
     private var mListener: MenuItem.OnMenuItemClickListener? = null
     private var mTitle: CharSequence? = null
 
@@ -74,7 +75,9 @@ class LingeringMenuItem(parent: ViewGroup) : MenuItem {
     }
 
     override fun setChecked(checked: Boolean): LingeringMenuItem {
-        Log.w(TAG, "LingeringFabMenu does not support this feature: setChecked")
+        if (mIsCheckable) {
+            mItem.isSelected = checked
+        }
         return this
     }
 
@@ -117,7 +120,7 @@ class LingeringMenuItem(parent: ViewGroup) : MenuItem {
     }
 
     override fun isCheckable(): Boolean {
-        return false
+        return mIsCheckable
     }
 
     override fun setShowAsAction(actionEnum: Int) {
@@ -182,7 +185,7 @@ class LingeringMenuItem(parent: ViewGroup) : MenuItem {
     }
 
     override fun isChecked(): Boolean {
-        return false
+        return mItem.isSelected
     }
 
     override fun setIntent(intent: Intent?): LingeringMenuItem {
@@ -211,7 +214,10 @@ class LingeringMenuItem(parent: ViewGroup) : MenuItem {
     }
 
     override fun setCheckable(checkable: Boolean): LingeringMenuItem {
-        Log.w(TAG, "LingeringFabMenu does not support this feature: setCheckable")
+        mIsCheckable = checkable
+        if (!checkable) {
+            mItem.isSelected = false
+        }
         return this
     }
 
