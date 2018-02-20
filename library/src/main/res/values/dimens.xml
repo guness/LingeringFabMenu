@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="lingering_menu_size_with_padding">72dp</dimen><!-- lingering_menu_size + 16dp -->
-    <dimen name="lingering_menu_size">56dp</dimen>
-    <dimen name="lingering_menu_half">28dp</dimen>
+    <dimen name="lingering_menu_size">48dp</dimen>
+    <dimen name="lingering_menu_half">24dp</dimen>
 </resources>
