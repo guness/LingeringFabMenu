@@ -1,5 +1,7 @@
 a Menu based Fab Menu implementation.
 
+[![](https://jitpack.io/v/guness/LingeringFabMenu.svg)](https://jitpack.io/#guness/LingeringFabMenu)
+
 #Requirements
 The library requires Android **API Level 14+**.
 
