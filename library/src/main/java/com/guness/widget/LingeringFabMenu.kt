@@ -40,6 +40,10 @@ class LingeringFabMenu : ConstraintLayout {
         if (a.hasValue(R.styleable.LingeringFabMenu_menu)) {
             inflateMenu(a.getResourceId(R.styleable.LingeringFabMenu_menu, 0))
         }
+        if (a.hasValue(R.styleable.LingeringFabMenu_drawable)) {
+            val icon = a.getResourceId(R.styleable.LingeringFabMenu_drawable, R.drawable.lingering_rotating_add)
+            fabView.setImageResource(icon)
+        }
 
         a.recycle()
     }

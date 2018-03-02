@@ -31,6 +31,7 @@ The library requires Android **API Level 14+**.
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        app:drawable="@drawable/leveling_menu_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:menu="@menu/menu_fab" />
