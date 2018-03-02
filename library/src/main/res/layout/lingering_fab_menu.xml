@@ -15,7 +15,7 @@
         android:background="@drawable/lingering_menu_background"
         android:minHeight="@dimen/lingering_menu_size"
         android:orientation="vertical"
-        android:paddingBottom="@dimen/lingering_menu_half"
+        android:paddingBottom="@dimen/lingering_menu_size"
         android:paddingTop="8dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/fabView"
