@@ -7,6 +7,7 @@
     android:layout_gravity="bottom"
     tools:parentTag="android.support.constraint.ConstraintLayout">
 
+    <!-- 42dp = 56 *3/4 -->
     <com.guness.widget.LingeringMenuView
         android:id="@+id/menuView"
         android:layout_width="0dp"
@@ -15,7 +16,7 @@
         android:background="@drawable/lingering_menu_background"
         android:minHeight="@dimen/lingering_menu_size"
         android:orientation="vertical"
-        android:paddingBottom="@dimen/lingering_menu_size"
+        android:paddingBottom="42dp"
         android:paddingTop="8dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/fabView"
@@ -29,6 +30,7 @@
         android:layout_width="@dimen/lingering_menu_size"
         android:layout_height="@dimen/lingering_menu_size"
         android:layout_margin="8dp"
+        android:padding="4dp"
         android:src="@drawable/lingering_rotating_add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
