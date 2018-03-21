@@ -59,7 +59,15 @@ class LingeringFabMenu : ConstraintLayout {
         return menuView.findItem(id)
     }
 
-    fun hide() {
+    fun hideMenu() {
+        if (!mOpen.get()) {
+            rotateFabForward()
+            visibilityListener?.onVisibilityChanged(true)
+            toggle()
+        }
+    }
+
+    fun showMenu() {
         if (mOpen.get()) {
             rotateFabBackward()
             visibilityListener?.onVisibilityChanged(false)
