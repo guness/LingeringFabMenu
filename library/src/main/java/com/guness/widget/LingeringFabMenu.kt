@@ -60,7 +60,7 @@ class LingeringFabMenu : ConstraintLayout {
     }
 
     fun hideMenu() {
-        if (!mOpen.get()) {
+        if (mOpen.get()) {
             rotateFabForward()
             visibilityListener?.onVisibilityChanged(true)
             toggle()
@@ -68,7 +68,7 @@ class LingeringFabMenu : ConstraintLayout {
     }
 
     fun showMenu() {
-        if (mOpen.get()) {
+        if (!mOpen.get()) {
             rotateFabBackward()
             visibilityListener?.onVisibilityChanged(false)
             toggle()
