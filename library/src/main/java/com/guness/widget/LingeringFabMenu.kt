@@ -10,8 +10,8 @@ import android.view.MenuItem
 import android.view.View
 import android.view.animation.OvershootInterpolator
 import kotlinx.android.synthetic.main.lingering_fab_menu.view.*
+import java.lang.Math.max
 import java.util.concurrent.atomic.AtomicBoolean
-import kotlin.math.max
 
 /**
  * Created by guness on 24.01.2018.
@@ -20,6 +20,7 @@ class LingeringFabMenu : ConstraintLayout {
 
     private var mOpen = AtomicBoolean(false)
     private var mHeight = 0
+    private var visibilityListener: OnMenuVisibilityListener? = null
 
     constructor(context: Context) : this(context, null)
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
@@ -29,8 +30,10 @@ class LingeringFabMenu : ConstraintLayout {
         fabView.setOnClickListener {
             if (mOpen.get()) {
                 rotateFabBackward()
+                visibilityListener?.onVisiblityChanged(false)
             } else {
                 rotateFabForward()
+                visibilityListener?.onVisiblityChanged(true)
             }
             toggle()
         }
@@ -107,6 +110,11 @@ class LingeringFabMenu : ConstraintLayout {
 
     fun setOnMenuItemClickListener(listener: MenuItem.OnMenuItemClickListener?) {
         menuView.setOnMenuItemClickListener(listener)
+    }
+
+
+    interface OnMenuVisibilityListener {
+        fun onVisiblityChanged(visible: Boolean)
     }
 
     companion object {
