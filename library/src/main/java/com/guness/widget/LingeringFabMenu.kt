@@ -20,7 +20,7 @@ class LingeringFabMenu : ConstraintLayout {
 
     private var mOpen = AtomicBoolean(false)
     private var mHeight = 0
-    private var visibilityListener: OnMenuVisibilityListener? = null
+    var visibilityListener: OnMenuVisibilityListener? = null
 
     constructor(context: Context) : this(context, null)
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
