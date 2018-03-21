@@ -30,10 +30,10 @@ class LingeringFabMenu : ConstraintLayout {
         fabView.setOnClickListener {
             if (mOpen.get()) {
                 rotateFabBackward()
-                visibilityListener?.onVisiblityChanged(false)
+                visibilityListener?.onVisibilityChanged(false)
             } else {
                 rotateFabForward()
-                visibilityListener?.onVisiblityChanged(true)
+                visibilityListener?.onVisibilityChanged(true)
             }
             toggle()
         }
@@ -57,6 +57,14 @@ class LingeringFabMenu : ConstraintLayout {
 
     fun findItem(id: Int): MenuItem? {
         return menuView.findItem(id)
+    }
+
+    fun hide() {
+        if (mOpen.get()) {
+            rotateFabBackward()
+            visibilityListener?.onVisibilityChanged(false)
+            toggle()
+        }
     }
 
     // https://stackoverflow.com/a/47594719
@@ -112,9 +120,8 @@ class LingeringFabMenu : ConstraintLayout {
         menuView.setOnMenuItemClickListener(listener)
     }
 
-
     interface OnMenuVisibilityListener {
-        fun onVisiblityChanged(visible: Boolean)
+        fun onVisibilityChanged(visible: Boolean)
     }
 
     companion object {
